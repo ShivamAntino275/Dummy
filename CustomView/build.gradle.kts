@@ -1,5 +1,6 @@
 plugins {
-    id("com.android.application")
+//    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("kotlin-parcelize")
@@ -11,11 +12,11 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.indigo.custom"
+//        applicationId = "com.indigo.custom"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+//        versionCode = 1
+//        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
