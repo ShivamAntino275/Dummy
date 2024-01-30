@@ -4,7 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("kotlin-parcelize")
-
+    id("maven-publish")
 }
 
 android {
@@ -42,6 +42,8 @@ android {
         dataBinding = true
     }
 }
+
+
 
 dependencies {
 
