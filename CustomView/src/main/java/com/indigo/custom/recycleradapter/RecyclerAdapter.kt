@@ -45,8 +45,7 @@ class RecyclerAdapter<T : AbstractModel>(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH<T> {
         val layoutInflater = inflater ?: LayoutInflater.from(parent.context)
-        val binding =
-            DataBindingUtil.inflate<ViewDataBinding>(layoutInflater, layoutId, parent, false)
+        val binding = DataBindingUtil.inflate<ViewDataBinding>(layoutInflater, layoutId, parent, false)
         isAnimation = animationEnabled
         return VH(binding)
     }

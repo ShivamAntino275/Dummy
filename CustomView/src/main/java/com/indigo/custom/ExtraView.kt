@@ -3,6 +3,7 @@ package com.indigo.custom
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.indigo.custom.networks.RetrofitClient
@@ -59,39 +60,36 @@ class ExtraView : ConstraintLayout {
         }
     }
 
-    fun setValue(context: Context) {
-//        fetchData(context)
-    }
 
     fun fetchData(context: Context){
         CoroutineScope(Dispatchers.IO).launch {
-            var response = RetrofitClient.getApiService().callServer()
+            val response = RetrofitClient.getApiService().callServer()
             if (response.isSuccessful){
                 CoroutineScope(Dispatchers.Main).launch {
-
                     var data = response.body()
-                    transactionAdapter.addItems(arrayListOf<DummyModel>().apply {
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                    })
-                    contestPositionAdapter.addItems(arrayListOf<DummyModel>().apply {
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                        add(DummyModel())
-                    })
+                    Toast.makeText(context, "Working $data", Toast.LENGTH_SHORT).show()
+//                    transactionAdapter.addItems(arrayListOf<DummyModel>().apply {
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                    })
+//                    contestPositionAdapter.addItems(arrayListOf<DummyModel>().apply {
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                        add(DummyModel())
+//                    })
                 }
             }
 
